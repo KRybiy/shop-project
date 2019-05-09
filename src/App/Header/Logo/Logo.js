@@ -8,6 +8,7 @@ const Logo = () => {
 					<div className="logo">
 						<img src={logo} alt="" />
 					</div>
+					
     )
 }
 
