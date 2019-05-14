@@ -28,7 +28,12 @@ body {
 .text-center {
 	text-align: center;
 }
-
+.page-title {
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	margin: 10px 0;
+}
 @media(min-width: 768px) {
 	.container {
 		width: 750px;
