@@ -5,7 +5,8 @@ const products = [
         description:"This is iPhone 7",
         type:'phone',
         capacity:'16',
-        price:'378',       
+        price:'378',  
+        image:"/images/products/iphone.png",     
     },
     {
         id:2,
@@ -14,7 +15,7 @@ const products = [
         type:'phone',
         capacity:'32',
         price:'599',
-
+        image:"/images/products/ipod.png",   
     },
     {
         id:3,
@@ -23,7 +24,7 @@ const products = [
         type:'phone',
         capacity:'256',
         price:'1879',
-        
+        image:"/images/products/iphone.png", 
     },
     {
         id:4,
@@ -32,6 +33,7 @@ const products = [
         type:'phone',
         capacity:'124',
         price:'699',
+        image:"/images/products/ipod.png", 
     }
 ]
 
