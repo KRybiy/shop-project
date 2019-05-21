@@ -19,7 +19,21 @@ class ProductListItem extends Component {
                 
             }))
         }
-       
+        renderQuantity () {
+        return(
+        <div className="product-quantity"> 
+                    <button
+                        onClick={this.onDecrementClick}
+                        disabled={this.state.productCount <= 1}
+                    >-</button>
+                    <input type="text" value={this.state.productCount} readOnly/>
+                    <button
+                        onClick={this.onIncrementClick}
+                        disabled={this.state.productCount >= 5}
+                    >+</button>
+                </div>
+        )}
+
         static propTypes = {
             name:PropTypes.string.isRequired,
             image:PropTypes.string,
@@ -47,17 +61,7 @@ class ProductListItem extends Component {
                 <div className="product-description"> {description}</div>
                 <div className="product-features"> Type: {type} </div>
                 <div className="product-features"> Capacity: {capacity} Gb</div>
-                <div className="product-quantity"> 
-                    <button
-                        onClick={this.onDecrementClick}
-                        disabled={this.state.productCount <= 1}
-                    >-</button>
-                    <input type="text" value={this.state.productCount} readOnly/>
-                    <button
-                        onClick={this.onIncrementClick}
-                        disabled={this.state.productCount >= 5}
-                    >+</button>
-                </div>
+                {this.renderQuantity()}
                 <div className="product-price"> {price}$</div>
                 <button className="btn-add-to-cart"> Add to Cart </button>
             </div>
