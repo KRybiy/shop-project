@@ -24,7 +24,7 @@ const products = [
         type:'phone',
         capacity:256,
         price:1879,
-        //image:"/images/products/iphone.png", 
+        image:"/images/products/iphone.png", 
     },
     {
         id:4,

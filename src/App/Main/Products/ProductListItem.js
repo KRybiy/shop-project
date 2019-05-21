@@ -11,11 +11,15 @@ class ProductListItem extends Component {
                 productCount:prevState.productCount+1
             }))
         }
+        
         onDecrementClick = ()=>{
+            
             this.setState((prevState)=>({
-                productCount:prevState.productCount-1
+                productCount:prevState.productCount-1,
+                
             }))
         }
+       
         static propTypes = {
             name:PropTypes.string.isRequired,
             image:PropTypes.string,
@@ -33,7 +37,7 @@ class ProductListItem extends Component {
             capacity,
             price,
         } = this.props
-        return (
+         return (
            
             <div className="product-list-item">
                 <div className="product-img">
@@ -46,10 +50,12 @@ class ProductListItem extends Component {
                 <div className="product-quantity"> 
                     <button
                         onClick={this.onDecrementClick}
+                        disabled={this.state.productCount <= 1}
                     >-</button>
                     <input type="text" value={this.state.productCount} readOnly/>
                     <button
                         onClick={this.onIncrementClick}
+                        disabled={this.state.productCount >= 5}
                     >+</button>
                 </div>
                 <div className="product-price"> {price}$</div>
