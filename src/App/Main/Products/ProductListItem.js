@@ -11,11 +11,17 @@ class ProductListItem extends Component {
                 productCount:prevState.productCount+1
             }))
         }
+        onDecrementClick = ()=>{
+            this.setState((prevState)=>({
+                productCount:prevState.productCount-1
+            }))
+        }
         static propTypes = {
             name:PropTypes.string.isRequired,
+            image:PropTypes.string,
             description:PropTypes.string,
-            price:PropTypes.number,
-            type:PropTypes.string,
+            price:PropTypes.number.isRequired,
+            type:PropTypes.string.isRequired,
             capacity:PropTypes.number,
         }
     render () {
@@ -38,7 +44,9 @@ class ProductListItem extends Component {
                 <div className="product-features"> Type: {type} </div>
                 <div className="product-features"> Capacity: {capacity} Gb</div>
                 <div className="product-quantity"> 
-                    <button>-</button>
+                    <button
+                        onClick={this.onDecrementClick}
+                    >-</button>
                     <input type="text" value={this.state.productCount} readOnly/>
                     <button
                         onClick={this.onIncrementClick}
@@ -52,12 +60,4 @@ class ProductListItem extends Component {
 }
 
 
-        ProductListItem.propTypes = {
-         name:PropTypes.string.isRequired,
-        image:PropTypes.string,
-        description:PropTypes.string,
-        type:PropTypes.string.isRequired,
-         capacity:PropTypes.number.isRequired,
-        price:PropTypes.number.isRequired,
-        }
 export default ProductListItem
