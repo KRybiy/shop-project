@@ -50,6 +50,7 @@ class ProductListItem extends Component {
             type,
             capacity,
             price,
+            addProductToCart,
         } = this.props
          return (
            
@@ -63,7 +64,9 @@ class ProductListItem extends Component {
                 <div className="product-features"> Capacity: {capacity} Gb</div>
                 {this.renderQuantity()}
                 <div className="product-price"> {price}$</div>
-                <button className="btn-add-to-cart"> Add to Cart </button>
+                <button className="btn-add-to-cart"
+                    onClick={()=> {addProductToCart (price,this.state.productCount)}}
+                > Add to Cart </button>
             </div>
         )
     }

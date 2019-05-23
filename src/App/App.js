@@ -11,7 +11,6 @@ class App extends Component {
     
     state ={
         cartData: {
-            
             price:0,
             totalCount:0,
         }
@@ -32,9 +31,9 @@ class App extends Component {
                 totalCount={this.state.cartData.totalCount}
                 price={this.state.cartData.price}
             />
-            <button onClick={()=>this.addProductToCart(500,5)}>Add to cart 
-            </button>
-            <Main/>
+            <Main
+            addProductToCart={this.addProductToCart}
+            />
             <Footer/>
              </div>
         )
