@@ -8,7 +8,10 @@ import './header.css'
 import Logo from './Logo/Logo'
 import Menu from './Menu/Menu'
 import Cart from './Cart/Cart'
-const Header= (props) => {
+const Header= ({
+	totalCount,
+	price,
+}) => {
     return (
 		<div>
 			<header className="header">
@@ -22,8 +25,8 @@ const Header= (props) => {
 						</div>
 						<div className="col-lg-3">
 							<Cart
-								totalCount={props.totalCount}
-								price={props.price}
+								totalCount={totalCount}
+								price={price}
 							/>
 						</div>
 					</div>
