@@ -18,7 +18,10 @@ class App extends Component {
     render () {
         return (
             <div>
-            <Header/>
+            <Header
+                totalCount={this.state.cartData.totalCount}
+                price={this.state.cartData.price}
+            />
             <Main/>
             <Footer/>
              </div>
