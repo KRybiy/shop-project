@@ -65,7 +65,7 @@ class ProductListItem extends Component {
                 {this.renderQuantity()}
                 <div className="product-price"> {price}$</div>
                 <button className="btn-add-to-cart"
-                    onClick={()=> {addProductToCart (price,this.state.productCount)}}
+                    onClick={()=> {addProductToCart (this.state.productsInCart)}}
                 > Add to Cart </button>
             </div>
         )
