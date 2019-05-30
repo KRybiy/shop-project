@@ -9,8 +9,6 @@ const productsMap = products.reduce((accObj,product) => ({
 	[product.id]:product
 }),{})
 
-console.log(products)
-console.log(productsMap)
 
 const Cart= ({
 	productsInCart,
@@ -24,6 +22,11 @@ const Cart= ({
 								<span>{productsMap[productId].name}</span>: <span>{productsInCart[productId]}</span></div>
 							))
 						}
+						<div>Total: {
+							keys(productsInCart).reduce((total,productId) => (
+								total + (productsMap[productId].price * productsInCart[productId])
+							), 0)
+						}$</div>
 					</div>
 				
     )

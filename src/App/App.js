@@ -11,6 +11,7 @@ class App extends Component {
     
     state ={
         productsInCart: {
+           
         }
     }
 
@@ -22,6 +23,7 @@ class App extends Component {
             }
         }))
     }
+
     render () {
         return (
             <div>
