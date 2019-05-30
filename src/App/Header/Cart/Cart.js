@@ -1,5 +1,6 @@
 import React from 'react'
 import {keys} from 'lodash'
+import {Link} from 'react-router-dom'
 import './cart.css'
 
 import products from '../../Main/Products/products'
@@ -27,6 +28,7 @@ const Cart= ({
 								total + (productsMap[productId].price * productsInCart[productId])
 							), 0)
 						}$</div>
+						<Link to="/cart"> Show Cart</Link>
 					</div>
 				
     )
