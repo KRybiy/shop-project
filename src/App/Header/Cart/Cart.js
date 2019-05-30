@@ -4,8 +4,14 @@ import './cart.css'
 
 import products from '../../Main/Products/products'
 
+const productsMap = products.reduce((accObj,product) => ({
+	...accObj,
+	[product.id]:product
+}),{})
 
 console.log(products)
+console.log(productsMap)
+
 const Cart= ({
 	productsInCart,
 }) => {
@@ -15,7 +21,7 @@ const Cart= ({
 						{
 							keys(productsInCart).map((productId)=>(
 								<div key={productId}> 
-								<span>{products[productId-1].name}</span>: <span>{productsInCart[productId]}</span></div>
+								<span>{productsMap[productId].name}</span>: <span>{productsInCart[productId]}</span></div>
 							))
 						}
 					</div>
