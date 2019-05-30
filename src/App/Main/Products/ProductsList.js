@@ -22,6 +22,7 @@ const ProductList = ({
                    }) => (
                         <div className="col-lg-6" key={id}>
                             <ProductListItem
+                            id={id}
                             addProductToCart={addProductToCart}
                             image={image}
                             name={name}
