@@ -5,6 +5,7 @@ const CartPage = () => {
     return (
         <div>
             <h1 className="page-title"> Cart Page</h1>
+            
         </div>
     )
 }
