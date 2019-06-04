@@ -1,5 +1,7 @@
 import React from 'react'
 import ProductList from './Products/ProductsList';
+import {Route} from 'react-router-dom'
+import CartPage from './CartPage/CartPage'
 
 const Main= ({
 	addProductToCart
@@ -12,9 +14,10 @@ const Main= ({
 					filter
 				</div>
 				<div className="col-lg-9">
-					<ProductList
+					{/*<ProductList
 					addProductToCart={addProductToCart}
-					/>
+					/>*/}
+					<Route path="/cart" component={CartPage}/>
 				</div>
 			</div>
 		</div>
