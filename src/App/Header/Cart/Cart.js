@@ -3,16 +3,12 @@ import {keys} from 'lodash'
 import {Link} from 'react-router-dom'
 import './cart.css'
 
-import products from '../../Main/Products/products'
-
-const productsMap = products.reduce((accObj,product) => ({
-	...accObj,
-	[product.id]:product
-}),{})
+import products, { getProductsMap } from '../../Main/Products/products'
 
 
 const Cart= ({
 	productsInCart,
+	productsMap = getProductsMap(products)
 }) => {
     return (
         
