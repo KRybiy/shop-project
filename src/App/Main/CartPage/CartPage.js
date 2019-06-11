@@ -10,7 +10,6 @@ const CartPage = ({
         <div>
             <h1 className="page-title"> Cart Page</h1>
             
-            <div className="cart text-center">
                 <CartProductList 
                 productsInCart={productsInCart}
                 CartListItemComponent={CartProductListItemExtended}
@@ -19,7 +18,6 @@ const CartPage = ({
                   <CartTotal
                   productsInCart={productsInCart}
                   />
-                </div>
             </div>
         </div>
         
