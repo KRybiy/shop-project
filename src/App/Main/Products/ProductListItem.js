@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './ProductListItem.css'
+import QuantityInput from '../../../features/Quantity/QuantityInput';
 
 class ProductListItem extends Component {
         state = {
@@ -20,19 +21,15 @@ class ProductListItem extends Component {
             }))
         }
         renderQuantity () {
-        return(
-        <div className="product-quantity"> 
-                    <button
-                        onClick={this.onDecrementClick}
-                        disabled={this.state.productCount <= 1}
-                    >-</button>
-                    <input type="text" value={this.state.productCount} readOnly/>
-                    <button
-                        onClick={this.onIncrementClick}
-                        disabled={this.state.productCount >= 5}
-                    >+</button>
-                </div>
-        )}
+            return (
+                <QuantityInput
+                    onDecrementClick={this.onDecrementClick}
+                    onIncrementClick={this.onIncrementClick}
+                    productCount={this.state.productCount}
+                />
+            )
+        }
+        
 
         static propTypes = {
             name:PropTypes.string.isRequired,

@@ -22,6 +22,11 @@ const CartProductListItemExtended = ({
                     <p className="cart-extended-price">
                          Price for one item: <span className="bold">$ {product.price} </span> 
                     </p>
+                    <div className="product-quantity">
+                        <button>-</button>
+                        <input type="text" value={productCount} readOnly/>
+                        <button>+</button>
+                    </div>
                     <p className="cart-extended-count">
                          Selected quantity: <span className="bold"> {productCount} </span> 
                          
