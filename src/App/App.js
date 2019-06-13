@@ -24,15 +24,15 @@ class App extends Component {
         }))
     }
 
-    removeProductFromCart = (productId) => {
-        this.setState((prevState)=>({
-            productsInCart:{
-                ...prevState.productsInCart,
-                [productId]:(prevState.delete[productId]),
+    removeProductFromCart = (productId) =>{
+        this.setState((prevState)=>{
+            const prevProductsIncart = {...prevState.productsInCart}
+            delete prevProductsIncart[productId]
+            return {
+                productsInCart: prevProductsIncart
             }
-        }))
-            }
-                   
+        })
+    }   
 
     render () {
         return (
@@ -40,8 +40,7 @@ class App extends Component {
             <Header
                 productsInCart={this.state.productsInCart}
             />
-            <button
-            onClick={()=> {this.removeProductFromCart (this.state.productCount)}}>remove</button>
+            <button onClick={()=>this.removeProductFromCart("2")}>Delete</button>
             <Main
             addProductToCart={this.addProductToCart}
             productsInCart={this.state.productsInCart}
