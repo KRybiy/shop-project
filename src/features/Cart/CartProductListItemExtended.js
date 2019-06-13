@@ -4,10 +4,10 @@ import './CartProductListItemExtended.css'
 
 const CartProductListItemExtended = ({
     product,
-    productCount,
-    removeProductFromCart,
-    
-}) => (
+    productCount,    
+    removeProductFromCart
+} = this.props
+) => (
     <div>
        
         <div className="cart-product-list-item-description">
@@ -30,7 +30,7 @@ const CartProductListItemExtended = ({
                          Sum for this item: <span className="bold sum-price">$ {(product.price * productCount)} </span> 
                     </p>
                     <button
-                        onClick={removeProductFromCart (product.id,this.state.productCount)}>remove</button>
+                        onClick={()=> {removeProductFromCart (product.id)}}>remove </button>
                 </div>
             </div>
         </div>

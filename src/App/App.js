@@ -40,10 +40,10 @@ class App extends Component {
             <Header
                 productsInCart={this.state.productsInCart}
             />
-            <button onClick={()=>this.removeProductFromCart("2")}>Delete</button>
             <Main
             addProductToCart={this.addProductToCart}
             productsInCart={this.state.productsInCart}
+            removeProductFromCart={this.removeProductFromCart}
             />
             <Footer/>
              </div>
