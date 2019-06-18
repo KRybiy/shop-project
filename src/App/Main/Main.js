@@ -30,6 +30,7 @@ const Main= ({
 							productsInCart={productsInCart}
 							removeProductFromCart={removeProductFromCart}
 							changeProductQuantity={changeProductQuantity}/>
+							
 						)}/>
 					<Route path="/payment" component={PaymentPage}/>
 					<Route path="/shipping" component={ShippingPage}/>

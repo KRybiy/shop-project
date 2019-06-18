@@ -9,7 +9,8 @@ const CartProductListItemExtended =({
     product,
     productCount,
     removeProductFromCart,
-    changeProductQuantity
+    changeProductQuantity,
+    
 }) => (
     <div>
        
@@ -27,7 +28,13 @@ const CartProductListItemExtended =({
                     </p>
                     <div className="product-quantity">
                     <QuantityInput
-                        onDecrementClick={()=>changeProductQuantity(product.id, productCount-1)}
+                        minValue={0}
+                        onDecrementClick={()=>{
+                                if (productCount===1) {
+                                    removeProductFromCart (product.id)} 
+                                    else
+                                    {changeProductQuantity(product.id, productCount-1)}}}
+                            
                         onIncrementClick={()=>changeProductQuantity(product.id, productCount+1)}
                         productCount={productCount}
                     />

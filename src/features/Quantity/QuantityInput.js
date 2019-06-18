@@ -4,18 +4,22 @@ import React from 'react'
 const QuantityInput =({
     onDecrementClick,
     onIncrementClick,
-    productCount
+    productCount,
+    deleteOnDecrementClick,
+    minValue=Number.MIN_SAFE_INTEGER,
+    maxValue=10
 }) => {
     return(
         <div className="product-quantity"> 
                     <button
                         onClick={onDecrementClick}
-                        disabled={productCount <= 1}
+                        onDoubleClick={deleteOnDecrementClick}
+                        disabled={productCount <= minValue}
                     >-</button>
                     <input type="text" value={productCount} readOnly/>
                     <button
                         onClick={onIncrementClick}
-                        disabled={productCount >= 5}
+                        disabled={productCount >= maxValue}
                     >+</button>
                 </div>
         )}

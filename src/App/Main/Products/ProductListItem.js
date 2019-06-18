@@ -23,6 +23,7 @@ class ProductListItem extends Component {
         renderQuantity () {
             return (
                 <QuantityInput
+                    minValue={1}
                     onDecrementClick={this.onDecrementClick}
                     onIncrementClick={this.onIncrementClick}
                     productCount={this.state.productCount}
