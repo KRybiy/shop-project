@@ -2,12 +2,15 @@ import React from 'react'
 import './CartProductListItemExtended.css'
 
 
-const CartProductListItemExtended = ({
+import QuantityInput from "../Quantity/QuantityInput"
+
+
+const CartProductListItemExtended =({
     product,
-    productCount,    
-    removeProductFromCart
-} = this.props
-) => (
+    productCount,
+    removeProductFromCart,
+    changeProductQuantity
+}) => (
     <div>
        
         <div className="cart-product-list-item-description">
@@ -23,9 +26,11 @@ const CartProductListItemExtended = ({
                          Price for one item: <span className="bold">$ {product.price} </span> 
                     </p>
                     <div className="product-quantity">
-                        <button>-</button>
-                        <input type="text" value={productCount} readOnly/>
-                        <button>+</button>
+                    <QuantityInput
+                        onDecrementClick={()=>changeProductQuantity(product.id, productCount-1)}
+                        onIncrementClick={()=>changeProductQuantity(product.id, productCount+1)}
+                        productCount={productCount}
+                    />
                     </div>
                     <p className="cart-extended-count">
                          Selected quantity: <span className="bold"> {productCount} </span> 
@@ -41,6 +46,6 @@ const CartProductListItemExtended = ({
         </div>
     </div>
 )
-
+    
 export default CartProductListItemExtended
 
