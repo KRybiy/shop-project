@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import './ProductListItem.css'
 import QuantityInput from '../../../features/Quantity/QuantityInput';
 
 class ProductListItem extends Component {
-        state = {
+    state = {
             productCount:1 
         }
+        
+
         onIncrementClick = ()=>{
             this.setState((prevState)=>({
                 productCount:prevState.productCount+1
@@ -57,7 +60,10 @@ class ProductListItem extends Component {
                 <div className="product-img">
                     <img src={image} alt=""/>
                 </div>
-                <h2 className="product-title"> {name}</h2>
+                <button><span>&#9825;</span></button>
+                <button><span>&#10084;</span></button>
+                <h2 className="product-title">
+                    <Link to={`/products/${id}`}>{name}</Link></h2>
                 <div className="product-description"> {description}</div>
                 <div className="product-features"> Type: {type} </div>
                 <div className="product-features"> Capacity: {capacity} Gb</div>
