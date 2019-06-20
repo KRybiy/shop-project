@@ -72,7 +72,10 @@ class ProductListItem extends Component {
     }
 }
 
-
-export default connect((state,props) => ({
+const mapStateToProps = (state,props) => ({
     isLiked: state[props.id]
-}))(ProductListItem)
+})
+
+export default connect(
+    mapStateToProps,
+)(ProductListItem)
