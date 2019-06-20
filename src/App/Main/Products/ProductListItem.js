@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import './ProductListItem.css'
 import QuantityInput from '../../../features/Quantity/QuantityInput';
@@ -72,4 +73,6 @@ class ProductListItem extends Component {
 }
 
 
-export default ProductListItem
+export default connect((state,props) => ({
+    isLiked: state[props.id]
+}))(ProductListItem)

@@ -7,6 +7,11 @@ import './index.css';
 import App from './App/App';
 import * as serviceWorker from './serviceWorker';
 
+const productsLikeReducer = (state={
+    '1': true,
+    '2': true,
+},action) => state
+
 const store = createStore(productsLikeReducer)
 
 ReactDOM.render(
