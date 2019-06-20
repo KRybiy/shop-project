@@ -51,6 +51,7 @@ class ProductListItem extends Component {
             capacity,
             price,
             addProductToCart,
+            isLiked = false,
         } = this.props
          return (
            
@@ -58,6 +59,9 @@ class ProductListItem extends Component {
                 <div className="product-img">
                     <img src={image} alt=""/>
                 </div>
+                <button>
+                    {isLiked ? <span>&#10084;</span>: <span>&#9825;</span>}
+                </button>
                 <h2 className="product-title"> {name}</h2>
                 <div className="product-description"> {description}</div>
                 <div className="product-features"> Type: {type} </div>
