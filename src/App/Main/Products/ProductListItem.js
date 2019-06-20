@@ -33,7 +33,16 @@ class ProductListItem extends Component {
                 />
             )
         }
-        
+
+        renderLike () {
+            if(this.props.isLiked) {
+                this.props.removeLike(this.props.id)
+            } else {
+                this.props.addLike(this.props.id)
+            }
+
+        }
+      
 
         static propTypes = {
             name:PropTypes.string.isRequired,
@@ -53,6 +62,7 @@ class ProductListItem extends Component {
             capacity,
             price,
             addProductToCart,
+            isLiked
         } = this.props
          return (
            
@@ -60,8 +70,9 @@ class ProductListItem extends Component {
                 <div className="product-img">
                     <img src={image} alt=""/>
                 </div>
-                <button><span>&#9825;</span></button>
-                <button><span>&#10084;</span></button>
+                <button onClick={()=>this.renderLike()}>
+                        {isLiked? <span>&#10084;</span>: <span>&#9825;</span>} 
+                </button>
                 <h2 className="product-title">
                     <Link to={`/products/${id}`}>{name}</Link></h2>
                 <div className="product-description"> {description}</div>

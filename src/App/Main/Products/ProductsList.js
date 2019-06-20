@@ -4,6 +4,9 @@ import products from './products.js'
 
 const ProductList = ({
     addProductToCart,
+    removeLike,
+	addLike,
+	likedProductsState,
 }
 ) => {
     return (
@@ -30,6 +33,9 @@ const ProductList = ({
                             type={type}
                             capacity={capacity}
                             price={price}
+                            addLike={addLike}
+                            removeLike={removeLike}
+                            isLiked={likedProductsState[id]}
                             />
                         </div>
                        ))
